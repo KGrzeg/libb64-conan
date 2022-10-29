@@ -22,7 +22,7 @@ namespace base64
 		base64_decodestate _state;
 		int _buffersize;
 
-		decoder(int buffersize_in = BUFFERSIZE)
+		decoder(int buffersize_in = LIBB64_BUFFERSIZE)
 		: _buffersize(buffersize_in)
 		{}
 

@@ -19,3 +19,8 @@ target_include_directories(libb64
     PUBLIC
         ${PROJECT_SOURCE_DIR}/include
 )
+
+target_compile_definitions(libb64
+    PUBLIC
+        LIBB64_BUFFERSIZE=16777216
+)
