@@ -12,7 +12,7 @@ For details, see http://sourceforge.net/projects/libb64
 
 namespace base64
 {
-	extern "C" 
+	extern "C"
 	{
 		#include "cencode.h"
 	}
@@ -22,7 +22,7 @@ namespace base64
 		base64_encodestate _state;
 		int _buffersize;
 
-		encoder(int buffersize_in = BUFFERSIZE)
+		encoder(int buffersize_in = LIBB64_BUFFERSIZE)
 		: _buffersize(buffersize_in)
 		{}
 
