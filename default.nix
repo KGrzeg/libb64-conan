@@ -11,5 +11,6 @@ mkShell {
   buildInputs = [
     cmake
     gcc
+    conan
   ];
 }
