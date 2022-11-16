@@ -1,26 +1,8 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.15)
+project(libb64 CXX)
 
-############################################################
-# Project
-############################################################
+add_library(libb64 src/libb64.cpp)
+target_include_directories(libb64 PUBLIC include)
 
-project(libb64 LANGUAGES C CXX VERSION 1.2.1)
-
-############################################################
-# Library
-############################################################
-
-add_library(libb64 STATIC
-    src/cdecode.c
-    src/cencode.c
-)
-
-target_include_directories(libb64
-    PUBLIC
-        ${PROJECT_SOURCE_DIR}/include
-)
-
-target_compile_definitions(libb64
-    PUBLIC
-        LIBB64_BUFFERSIZE=16777216
-)
+set_target_properties(libb64 PROPERTIES PUBLIC_HEADER "include/libb64.h")
+install(TARGETS libb64)
