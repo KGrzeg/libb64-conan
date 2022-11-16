@@ -1,5 +1,5 @@
 from conan import ConanFile
-from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout
+from conan.tools.cmake import CMake, cmake_layout
 
 
 class Libb64Conan(ConanFile):
@@ -10,7 +10,7 @@ class Libb64Conan(ConanFile):
     license = "Creative Commons Public Domain License"
     author = "Chris Venter"
     url = "https://github.com/KGrzeg/libb64-conan"
-    description = "A  library of ANSI C routines for fast encoding/decoding data into and from a base64-encoded format."
+    description = "A library of ANSI C routines for fast encoding/decoding data into and from a base64-encoded format."
     topics = ("base64", "codec", "encoder", "decoder")
 
     # Binary configuration
@@ -23,6 +23,7 @@ class Libb64Conan(ConanFile):
         "shared": False,
         "fPIC": True
     }
+    generators = "CMakeToolchain"
 
     # Sources are located in the same place as this recipe, copy them to the recipe
     exports_sources = "CMakeLists.txt", "src/*", "include/*"
@@ -33,10 +34,6 @@ class Libb64Conan(ConanFile):
 
     def layout(self):
         cmake_layout(self)
-
-    def generate(self):
-        tc = CMakeToolchain(self)
-        tc.generate()
 
     def build(self):
         cmake = CMake(self)
