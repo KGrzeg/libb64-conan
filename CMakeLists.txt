@@ -9,6 +9,7 @@ add_library(libb64 STATIC
 target_include_directories(libb64 PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 set (MY_PUBLIC_HEADERS
+  ${PROJECT_SOURCE_DIR}/include/b64/common.h
   ${PROJECT_SOURCE_DIR}/include/b64/cencode.h
   ${PROJECT_SOURCE_DIR}/include/b64/cdecode.h
   ${PROJECT_SOURCE_DIR}/include/b64/decode.h

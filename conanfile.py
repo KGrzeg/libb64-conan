@@ -4,7 +4,7 @@ from conan.tools.cmake import CMake, cmake_layout
 
 class Libb64Conan(ConanFile):
     name = "libb64"
-    version = "0.1"
+    version = "1.2.2"
 
     # Optional metadata
     license = "Creative Commons Public Domain License"
