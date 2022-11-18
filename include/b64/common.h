@@ -1,0 +1,3 @@
+#ifndef LIBB64_BUFFERSIZE
+  #define LIBB64_BUFFERSIZE 16777216
+#endif
