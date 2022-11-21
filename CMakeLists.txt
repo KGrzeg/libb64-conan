@@ -24,3 +24,5 @@ target_compile_definitions(libb64
     PUBLIC
         LIBB64_BUFFERSIZE=16777216
 )
+
+install(TARGETS libb64)
