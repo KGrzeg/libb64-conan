@@ -1,26 +1,20 @@
-cmake_minimum_required(VERSION 3.0)
-
-############################################################
-# Project
-############################################################
-
-project(libb64 LANGUAGES C CXX VERSION 1.2.1)
-
-############################################################
-# Library
-############################################################
+cmake_minimum_required(VERSION 3.15)
+project(libb64 LANGUAGES C CXX VERSION 1.2.2)
 
 add_library(libb64 STATIC
-    src/cdecode.c
-    src/cencode.c
+  src/cdecode.c
+  src/cencode.c
 )
 
-target_include_directories(libb64
-    PUBLIC
-        ${PROJECT_SOURCE_DIR}/include
+target_include_directories(libb64 PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+set (MY_PUBLIC_HEADERS
+  ${PROJECT_SOURCE_DIR}/include/b64/common.h
+  ${PROJECT_SOURCE_DIR}/include/b64/cencode.h
+  ${PROJECT_SOURCE_DIR}/include/b64/cdecode.h
+  ${PROJECT_SOURCE_DIR}/include/b64/decode.h
+  ${PROJECT_SOURCE_DIR}/include/b64/decode.h
 )
 
-target_compile_definitions(libb64
-    PUBLIC
-        LIBB64_BUFFERSIZE=16777216
-)
+set_target_properties(libb64 PROPERTIES PUBLIC_HEADER "${MY_PUBLIC_HEADERS}")
+install(TARGETS libb64)
